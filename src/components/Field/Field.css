@@ -1,0 +1,11 @@
+.field {
+    margin: auto;
+    flex: 0 0 600px;
+    width: 600px;
+    height: 600px;
+    background: #EDEDED;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    position: relative;
+}
