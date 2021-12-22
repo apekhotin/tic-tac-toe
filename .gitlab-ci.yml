@@ -6,6 +6,9 @@ stages:
 Dependencies:
   stage: build
   image: node:17
-  script:
-    - echo 123
-    - echo 456
+  script: npm i
+
+Lint:
+  stage: tests
+  image: node:17
+  script: npm run lint
