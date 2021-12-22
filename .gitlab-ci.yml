@@ -1,0 +1,11 @@
+stages:
+  - build
+  - tests
+  - deploy
+
+Dependencies:
+  stage: build
+  image: node:17
+  script:
+    - echo 123
+    - echo 456
