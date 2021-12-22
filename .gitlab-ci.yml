@@ -38,3 +38,7 @@ Test:
     paths:
       - node_modules
     policy: pull
+  only:
+    - test
+  except:
+    - branches
