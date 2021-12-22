@@ -42,3 +42,4 @@ Test:
     - test
   except:
     - branches
+  when: manual
