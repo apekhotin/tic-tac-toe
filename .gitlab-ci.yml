@@ -7,8 +7,23 @@ Dependencies:
   stage: build
   image: node:17
   script: npm i
+  cache:
+    key:
+      files:
+        - package-lock.json
+    paths:
+      - node_modules
+    policy: pull-push
 
 Lint:
   stage: tests
   image: node:17
   script: npm run lint
+  cache:
+    key:
+      files:
+        - package-lock.json
+    paths:
+      - node_modules
+    policy: pull
+
