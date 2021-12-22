@@ -27,3 +27,14 @@ Lint:
       - node_modules
     policy: pull
 
+Test:
+  stage: tests
+  image: node:17
+  script: npm test
+  cache:
+    key:
+      files:
+        - package-lock.json
+    paths:
+      - node_modules
+    policy: pull
