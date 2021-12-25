@@ -43,3 +43,22 @@ Test:
   except:
     - branches
   when: manual
+
+Deploy:
+  stage: deploy
+  image: node:17
+  variables:
+    SURGE_LOGIN: ${SURGE_LOGIN}
+    SURGE_TOKEN: ${SURGE_TOKEN}
+  before_script:
+    - npm install --global surge
+    - npm build
+  script:
+    - surge --project ./build --domain ${CNAME}
+  after_script:
+    - npm uninstall --global surge
+    - rm -rf build/
+  only:
+    - tags
+    - /^v-.*$/
+  when: manual
